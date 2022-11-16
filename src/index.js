@@ -1,4 +1,6 @@
 import './style.scss';
+import '@fortawesome/fontawesome-free/js/fontawesome';
+import '@fortawesome/fontawesome-free/js/solid';
 
 let submit = document.getElementsByClassName('input-submit-container')[0];
 let numberInput = document.getElementById('number');
