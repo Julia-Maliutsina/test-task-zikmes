@@ -7,10 +7,17 @@
     <title>Заказазть</title>
   </head>
   <body>
-    <div class="input-wrapper">
-      <input id="number" type="text" placeholder="Ваш номер..." />
-      <button id="number-submit" class="input-submit">ЗАКАЗАТЬ</button>
-      <p class="input-error">Поле должно быть заполнено</p>
+    <div id="root">
+      <div class="input-wrapper">
+        <div class="input-container">
+          <input id="number" type="text" placeholder="Ваш номер..." />
+        </div>
+        <div class="input-submit-container">
+          <button id="number-submit" class="input-submit">ЗАКАЗАТЬ</button>
+        </div>
+      </div>
+      <p class="input-error">* Поле должно быть заполнено</p>
+      <p class="submit-result">Заказ успешно отправлен</p>
     </div>
     <script src="bundle.js"></script>
   </body>
