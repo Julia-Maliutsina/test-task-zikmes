@@ -1,0 +1,111 @@
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+
+$main-color: #ff2430;
+$secondary-color: #f2eeed;
+$hover-color: #d6212c;
+$height: 200px;
+$input-height: 50px;
+$input-height-mobile: 40px;
+$breakpoint-mobile: 600px;
+
+@mixin input-container {
+  height: $input-height;
+  border: 3px solid $secondary-color;
+  transform: skew(-45deg);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  @media (max-width: $breakpoint-mobile) {
+    height: $input-height-mobile;
+    border: 1px solid $secondary-color;
+    transform: skew(0);
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+@mixin input-rules {
+  transform: skew(45deg);
+  border: transparent;
+  background-color: transparent;
+  font-size: 20px;
+  line-height: 20px;
+  @media (max-width: $breakpoint-mobile) {
+    transform: skew(0);
+    font-size: 16px;
+    line-height: 16px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  height: $height;
+  background-color: black;
+  padding: 30px;
+  text-align: center;
+  @media (max-width: $breakpoint-mobile) {
+    padding: 10px;
+  }
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0 10%;
+
+  .input-container {
+    @include input-container;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 60%;
+    padding-left: 20px;
+    justify-content: flex-start;
+
+    input {
+      @include input-rules;
+      outline: none;
+      width: 100%;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      padding-left: 5px;
+    }
+  }
+
+  .input-submit-container {
+    @include input-container;
+    background-color: $main-color;
+    width: 40%;
+    justify-content: center;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $hover-color;
+    }
+
+    button {
+      color: $secondary-color;
+      @include input-rules;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.input-error {
+  color: $main-color;
+  display: none;
+}
+
+.submit-result {
+  color: $secondary-color;
+  display: none;
+}
